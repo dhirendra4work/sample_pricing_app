@@ -1,0 +1,10 @@
+CREATE TRIGGER before_test_rrp_insert 
+    BEFORE INSERT ON test_rrp
+    FOR EACH ROW 
+BEGIN
+	DECLARE bid_base_price INT;
+	select base_price into bid_base_price from base_price where bids = NEW.bids;
+    IF (NEW.rrp > bid_base_price) THEN
+		SET NEW.status = '1';
+	END IF;
+END

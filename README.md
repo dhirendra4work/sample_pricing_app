@@ -26,6 +26,10 @@ Generate ststic files and Start server
 
 Load data into base_price table 
 
+Add trigger before_test_rrp_insert 
+
+	trigger location 
+
 
 Underlying Logic
 ================
