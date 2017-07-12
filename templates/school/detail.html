@@ -1,0 +1,14 @@
+{% if school %}
+    <table border="0" >
+		<tr>
+			<th>Name</th> 
+			<th>Pincode</th>
+		</tr>
+    	<tr>
+			<th>{{ school.name }}</th> 
+			<th>{{ school.pincode }}</th>
+		</tr>
+    </table>
+{% else %}
+    <p>No Schools avaialable.</p>
+{% endif %}

@@ -1,0 +1,19 @@
+{% if school_list %}
+    <table border="0" >
+		<tr>
+			<th>S.No</th>
+			<th>Name</th> 
+			<th>Pincode</th>
+		</tr>
+
+	    {% for school in school_list %}
+	    	<tr>
+				<th>{{forloop.counter}}</th>
+				<th>{{ school.name }}</th> 
+				<th>{{ school.pincode }}</th>
+			</tr>
+	    {% endfor %}
+    </table>
+{% else %}
+    <p>No Schools avaialable.</p>
+{% endif %}

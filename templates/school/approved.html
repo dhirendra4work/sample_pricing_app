@@ -1,0 +1,22 @@
+{% if bids %}
+	    <table border="0" >
+			<tr>
+				<th>bids</th> 
+				<th>rrp</th>
+				<th>base_price</th>
+				<th>status</th>
+			</tr>
+
+		    {% for bid in bids %}
+		    	<tr>
+		    		
+					<th>{{ bid.0}}</th> 
+					<th>{{ bid.1 }}</th>
+					<th>{{ bid.2}}</th>
+					<th>approved</th>
+				</tr>
+		    {% endfor %}
+	    </table>
+{% else %}
+    <p>No Bids avaialable.</p>
+{% endif %}

@@ -1,0 +1,38 @@
+{% if bids %}
+	<form method = "POST" action = '/approved'>
+	    {% csrf_token %}
+	    <table border="0" >
+			<tr>
+				<th>operation</th>
+				<th>bids</th> 
+				<th>rrp</th>
+				<th>base_price</th>
+				<th>status</th>
+			</tr>
+
+		    {% for bid in bids %}
+		    	<tr>
+		    		{% if bid.3 == '0' %}
+						<th><input type = "checkbox" name = "to_be_approved" value = {{bid.4}} /></th>
+					{% else %}
+						<th></th>
+					{% endif %}
+
+					<th>{{ bid.0}}</th> 
+					<th>{{ bid.1 }}</th>
+					<th>{{ bid.2}}</th>
+					{% if bid.3 == '0' %}
+						<th>pending</th>
+					{% else %}
+						<th>approved</th>
+					{% endif %}
+					
+				</tr>
+		    {% endfor %}
+	    </table>
+	    <input type = "submit" value = "Approve">
+	</form>
+
+{% else %}
+    <p>No Bids avaialable.</p>
+{% endif %}

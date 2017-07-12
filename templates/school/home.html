@@ -1,0 +1,5 @@
+<form action="/review" method = 'POST' enctype="multipart/form-data">
+{% csrf_token %}
+ Select a file: <input type="file" name="test_rrp"><br>
+  <input type="submit" value="Submit">
+</form>
