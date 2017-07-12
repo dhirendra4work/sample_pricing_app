@@ -28,7 +28,7 @@ Load data into base_price table
 
 Add trigger before_test_rrp_insert 
 
-	trigger location 
+	trigger location /app_files/before_test_rrp_insert.txt
 
 
 Underlying Logic
